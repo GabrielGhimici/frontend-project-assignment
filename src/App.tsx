@@ -1,30 +1,36 @@
-import React, { useEffect } from "react";
+import type { FunctionComponent } from "react";
 import "./App.scss";
 import { Login } from "./pages/login";
 import { Home } from "./pages/home";
 import "./mocks/authentication";
 import "./mocks/product";
-import http from "./core/http";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { ProtectedRoute } from "./components/protected-route/ProtectedRoute";
 
-function App() {
-  useEffect(() => {
-    const test = async () => {
-      try {
-        const response = await http.get("/api/product/3");
-        console.log(response.data);
-      } catch (e: any) {
-        console.log(e.response);
-      }
-    };
-
-    test();
-  }, []);
+const App: FunctionComponent = () => {
   return (
-    <div className="App">
-      <Login />
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Navigate replace to="/home" />} />
+          <Route path={"/login"} element={<Login />}></Route>
+          <Route
+            path={"/home"}
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          ></Route>
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,31 @@
+@import "../../styles/config.scss";
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card {
+    width: 35%;
+    padding: map-get($spacing, "xl");
+    background-color: map-get($grey, "450");
+    border-radius: $card-radius-xs;
+    display: flex;
+    flex-direction: column;
+    .align-center {
+      align-self: center;
+    }
+    .title {
+      padding-bottom: map-get($spacing, "lg");
+      font-size: 30px;
+      line-height: 1.6;
+      letter-spacing: 0;
+      font-weight: 500;
+      color: map-get($yellow, "200");
+    }
+    .full-width {
+      width: 100%;
+    }
+  }
+}

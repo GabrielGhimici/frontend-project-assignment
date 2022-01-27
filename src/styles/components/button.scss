@@ -1,0 +1,22 @@
+@import "../config.scss";
+
+button {
+  padding: map-get($spacing, "xs") map-get($spacing, "sm");
+  width: fit-content;
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: map-get($yellow, "450");
+  border-radius: $card-radius-xs;
+  color: map-get($grey, "100");
+  cursor: pointer;
+  min-width: 80px;
+  text-align: center;
+  user-select: none;
+  border: none;
+  &:hover {
+    background-color: darken(map-get($yellow, "450"), 10%);
+  }
+}
