@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.scss';
-import { Login } from './pages/login';
-import { Home } from './pages/home'
+import React from "react";
+import "./App.scss";
+import { Login } from "./pages/login";
+import { Home } from "./pages/home";
 
 function App() {
   return (

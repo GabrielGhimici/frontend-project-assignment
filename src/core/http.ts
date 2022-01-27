@@ -1,8 +1,8 @@
 import axios from "axios";
-import AxiosMockAdapter from 'axios-mock-adapter';
+import AxiosMockAdapter from "axios-mock-adapter";
 
 const http = axios.create();
 
-export const mockedHttp = new AxiosMockAdapter(http, {delayResponse: 0})
+export const mockedHttp = new AxiosMockAdapter(http, { delayResponse: 0 });
 
 export default http;
