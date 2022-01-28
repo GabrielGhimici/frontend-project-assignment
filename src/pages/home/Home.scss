@@ -1,0 +1,25 @@
+@import "../../styles/config.scss";
+@import "../../styles/globals.scss";
+
+.home-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .content-container {
+    display: flex;
+    padding: map-get($spacing, "xl");
+    gap: map-get($spacing, "xl");
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($spacing, "xl");
+      width: 25%;
+      button {
+        width: 100%;
+      }
+    }
+    .content {
+      flex: 1;
+    }
+  }
+}

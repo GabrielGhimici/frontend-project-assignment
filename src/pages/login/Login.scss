@@ -1,4 +1,5 @@
 @import "../../styles/config.scss";
+@import "../../styles/globals.scss";
 
 .login-container {
   width: 100%;
@@ -7,12 +8,8 @@
   justify-content: center;
   align-items: center;
   .card {
-    width: 35%;
-    padding: map-get($spacing, "xl");
-    background-color: map-get($grey, "450");
-    border-radius: $card-radius-xs;
-    display: flex;
-    flex-direction: column;
+    width: 20%;
+    min-width: 300px;
     .align-center {
       align-self: center;
     }

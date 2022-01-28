@@ -1,0 +1,9 @@
+@import "../../styles/config.scss";
+
+.card {
+  padding: map-get($spacing, "xl");
+  background-color: map-get($grey, "450");
+  border-radius: $card-radius-xs;
+  display: flex;
+  flex-direction: column;
+}
