@@ -8,6 +8,7 @@
   align-items: center;
   background-color: lighten(map-get($grey, "100"), 15%);
   padding: map-get($spacing, "sm") map-get($spacing, "lg");
+  gap: map-get($spacing, "lg");
   .user {
     font-size: 16px;
     line-height: 1.5;

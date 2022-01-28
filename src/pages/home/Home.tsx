@@ -1,12 +1,14 @@
 import { FunctionComponent, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Header from "../../components/home/header";
+import { useAuth } from "../../core/hooks/useAuth";
 import { useHttp } from "../../core/hooks/useHttp";
 import "./Home.scss";
 
 export const Home: FunctionComponent = () => {
   const [productPath, setproductPath] = useState("");
   const [product, productError, productLoading] = useHttp(productPath, "get");
+  const { setErrorMessage, signOut } = useAuth();
 
   let children = null;
   if (product) {
@@ -22,6 +24,8 @@ export const Home: FunctionComponent = () => {
       <div className="card error">{productError.headers["x-message"]}</div>
     );
   } else if (productError && productError["status"] === 401) {
+    signOut();
+    setErrorMessage(productError.headers["x-message"] || "Unknown error");
     children = <Navigate to="/login" replace={true} />;
   }
 

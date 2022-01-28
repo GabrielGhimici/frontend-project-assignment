@@ -3,7 +3,7 @@ import { mockedHttp } from "../core/http";
 const user = {
   userName: "user",
   firstName: "John",
-  lastNmae: "Doe",
+  lastName: "Doe",
 };
 
 mockedHttp
