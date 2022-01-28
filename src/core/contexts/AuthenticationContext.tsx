@@ -33,10 +33,8 @@ export const AuthenticationProvider = ({
   const [errorMessage, setErrorMessage] = useState("");
   const [user, setUser] = useState<User | null>(null);
   const [cookies, setCookie, removeCookie] = useCookies(["product-cookie"]);
-  console.log(cookies, user, errorMessage);
 
   const signIn = (payload: Credentials, callback?: VoidFunction) => {
-    console.log(payload);
     setUser(null);
     setErrorMessage("");
     http
