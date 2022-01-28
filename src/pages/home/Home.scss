@@ -20,6 +20,23 @@
     }
     .content {
       flex: 1;
+      .product-container {
+        color: $text-color;
+        display: flex;
+        align-items: center;
+        gap: map-get($spacing, "sm");
+        .circle {
+          width: $circle-diameter;
+          height: $circle-diameter;
+          border-radius: 50%;
+        }
+      }
+      .error {
+        width: fit-content;
+        background-color: map-get($red, "500");
+        padding: map-get($spacing, "md");
+        color: $text-color;
+      }
     }
   }
 }
